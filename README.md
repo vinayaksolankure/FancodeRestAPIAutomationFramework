@@ -3,6 +3,7 @@
 ### Prerequisites
 - Java 8 or above
 - Maven 3.6 or above
+- (Recommendation - Use Latest Releases)
 
 ### Setup and Running the Tests
 1. Clone the repository.
