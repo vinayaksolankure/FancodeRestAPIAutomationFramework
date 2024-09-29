@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Sep 28 20:09:37 IST 2024</td>
+<td>Started on:</td><td>Sun Sep 29 11:11:45 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>7 seconds (7799 ms)</td>
+<tr><td>Total time:</td><td>5 seconds (5981 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
@@ -76,9 +76,24 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='fancode.tests.TestRunner.runScenario()'><b>runScenario</b><br>Test class: fancode.tests.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "All users of the city FanCode should have more than half of their todos tasks completed", "Optional[Verify todos completion percentage for FanCode city users]"</td>
-<td></td>
-<td>6</td>
-<td>fancode.tests.TestRunner@20ce78ec</td></tr>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at org.testng.Assert.assertTrue(Assert.java:53)
+	at fancode.tests.StepDefinitions.user_belongs_to_the_city_fancode(StepDefinitions.java:58)
+	at ✽.User belongs to the city FanCode(file:///D:/Eclipse%20Project/Vinayak_WorkSpace/FancodeRestAPIFramework/src/test/resources/features/FanCodeCity.feature:5)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1859780907", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1859780907'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at org.testng.Assert.assertTrue(Assert.java:53)
+	at fancode.tests.StepDefinitions.user_belongs_to_the_city_fancode(StepDefinitions.java:58)
+	at ✽.User belongs to the city FanCode(file:///D:/Eclipse%20Project/Vinayak_WorkSpace/FancodeRestAPIFramework/src/test/resources/features/FanCodeCity.feature:5)
+</pre></div></td>
+<td>4</td>
+<td>fancode.tests.TestRunner@79924b</td></tr>
 </table><p>
 </body>
 </html>
