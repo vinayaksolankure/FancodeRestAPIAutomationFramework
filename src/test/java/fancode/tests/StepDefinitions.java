@@ -26,16 +26,19 @@ public class StepDefinitions {
 	@Given("User has the todo tasks")
 	public void user_has_the_todo_tasks() throws Exception {
 		log.info("Fetching todo tasks from the API...");
+		
 		Response todosResponse = ApiClient.getTodos();
 		ObjectMapper mapper = new ObjectMapper();
 		todos = mapper.readValue(todosResponse.asString(),
 				mapper.getTypeFactory().constructCollectionType(List.class, Todo.class));
+		
 		log.info("Fetched {} todo tasks.", todos.size());
 	}
 
 	@And("User belongs to the city FanCode")
 	public void user_belongs_to_the_city_fancode() throws Exception {
 		log.info("Fetching user data from the API...");
+		
 		Response usersResponse = ApiClient.getUsers();
 		ObjectMapper mapper = new ObjectMapper();
 		users = mapper.readValue(usersResponse.asString(),
@@ -49,12 +52,14 @@ public class StepDefinitions {
 					return lat >= -40 && lat <= 5 && lng >= 5 && lng <= 100;
 				})
 				.collect(Collectors.toList());
+		
 		log.info("Filtered users from FanCode city: {} users found.", fanCodeUsers.size());
 	}
 
 	@Then("User Completed task percentage should be greater than {int}%")
 	public void user_completed_task_percentage_should_be_greater_than(int percentage) {
 		log.info("Validating completed task percentage for FanCode users...");
+		
 		for (User user : fanCodeUsers) {
 			List<Todo> userTodos = todos.stream()
 					.filter(todo -> todo.getUserId() == user.getId())
@@ -66,6 +71,7 @@ public class StepDefinitions {
 			Assert.assertTrue(completionPercentage > percentage, 
 					"User " + user.getName() + " has less than " + percentage + "% tasks completed.");
 		}
+		
 		log.info("Task completion validation completed successfully.");
 	}
 }
